@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 
 public class Executer {
 
- public void excut(){
+    //run the output file and print the result
+    public void excut(){
         String command = "python output.py";
-
 
         try {
             Process process = Runtime.getRuntime().exec(command);
@@ -24,6 +24,8 @@ public class Executer {
             e.printStackTrace();
         }
     }
+
+
 
 
 

@@ -4,12 +4,13 @@ import parser.MasterParser;
 import tokenizer.Token;
 import tokenizer.Tokenizer;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+
+import static java.lang.String.valueOf;
 
 public class TokenParserConnector {
 
+    //connect the tokenizer and parser. save the result to the output
     public void Connection() throws IOException {
         Tokenizer tokenizer = new Tokenizer();
         tokenizer.buildTokenLinkedList();
@@ -21,6 +22,21 @@ public class TokenParserConnector {
         outputFile.close();
 
         masterParser.acceptToken(token);
+    }
+
+    //Read file line by line and prints out
+    public static void readInputFile() throws IOException {
+        StringBuilder input = new StringBuilder();
+        try (BufferedReader inputFileReader = new BufferedReader(new FileReader("input.txt"))) {
+            String sCurrentLine;
+            while ((sCurrentLine = inputFileReader.readLine()) != null) {
+                input.append(sCurrentLine).append("\n");
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(valueOf(input) + "\n");
     }
 
 

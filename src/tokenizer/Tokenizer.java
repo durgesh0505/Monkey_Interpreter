@@ -55,6 +55,7 @@ public class Tokenizer
 
     }
 
+
     public List<String> assembleTokenSentences(List<String> monkeyLines)
     {
         List<String> tokenList = new ArrayList<>();
@@ -67,6 +68,7 @@ public class Tokenizer
     }
 
 
+    //convert the line to each word token
     public String[] convertTokenSentenceToTokenWords(String monkeyLine){
         // space | ( | ) | " | , | > | < | = | + if next to a letter or int | - if next to a letter or int
         String[] tokens1 = monkeyLine.split("\\s+");
@@ -87,6 +89,7 @@ public class Tokenizer
         return tokenString.stream().toArray(String[]::new);
     }
 
+    //Token linked list
     public void buildTokenLinkedList()
     {
         List<String> tokenList = assembleTokenSentences(readFileLineByLine());
@@ -110,6 +113,8 @@ public class Tokenizer
             }
         }
     }
+
+    //labeling the tokens
     public String labelTokenType(String[] tokens)
     {
         List<String> list = Arrays.asList(tokens);
@@ -153,8 +158,6 @@ public class Tokenizer
         return null;
     }
 
-    public static void main(String[] args) {
 
-    }
 
 }

@@ -65,51 +65,8 @@ public class MasterParser {
             token = token.getNextToken();
         }
 
-//        do{
-//            type = token.getType();
-//            switch (type){
-//                case ("variable") :
-//                    variableParser.parse(token.getTokens());
-//                    break;
-//                case ("return") :
-//                    returnParser.parse(token.getTokens());
-//                    break;
-//                case "semi":
-//                    semiColonParser.parse(token.getTokens());
-//                    break;
-//                case "print":
-//                    printParser.parse(token.getTokens());
-//                    break;
-//                case "openCurlyBraces":
-//                    openCurlyBrackes.parse(token.getTokens());
-//                    break;
-//                case "closeCurlyBraces":
-//                    CloseCurlyBraces.parse(token.getTokens());
-//                    break;
-//                case "function":
-//                    functionParser.parse(token.getTokens());
-//                    break;
-//                case "functionCall":
-//                    functionCall.parse(token.getTokens());
-//                    break;
-//                case "default":
-//                    defaultParser.parse(token.getTokens());
-//                    break;
-//                default:
-//                    defaultParser.parse(token.getTokens());
-//                    break;
-//            }
-//            token = token.getNextToken();
-//        }while(token != null);
-    }
 
-    public void tokenIterator(Token token) throws FileNotFoundException {
-        while(token.getNextToken() != null){
-            acceptToken(token);
-            token = token.getNextToken();
-        }
     }
-
 
 
 }
